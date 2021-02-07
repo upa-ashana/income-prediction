@@ -1,0 +1,133 @@
+<html>
+
+<head>
+  <title>5 years income prediction</title>
+</head>
+
+<body>
+  <div class="container">
+    <h4> Prediction Income of 5 years</h4>
+    <table class="table table-dark table-striped ">
+      <form name="iform" #f="ngForm" (ngSubmit)="onSaveAndPrint()">
+        <div class="inputPart">
+          <thead>
+            <th>Male Income</th>
+            <th>Female Income</th>
+            <th>Rate</th>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <div class="form-group">
+                  <input type="number" class="form-control" name="maleIncome0" [(ngModel)]="maleIncomeModel.maleBYI" #maleIncome0="ngModel"
+                    [class.is-invalid]="maleIncome0.invalid && maleIncome0.touched" required>
+                  <div class="text-danger" *ngIf="maleIncome0.invalid && (maleIncome0.dirty || maleIncome0.touched)">
+                    <small *ngIf="maleIncome0.errors.required"> Male Income ?</small>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div class="form-group">
+                  <input type="number" class="form-control" name="femaleIncome0" [(ngModel)]="femaleIncomeModel.femaleBYI" #femaleIncome0="ngModel"
+                    [class.is-invalid]="femaleIncome0.invalid && femaleIncome0.touched" required>
+                  <div class="text-danger" *ngIf="femaleIncome0.invalid && (femaleIncome0.dirty || femaleIncome0.touched)">
+                    <small *ngIf="femaleIncome0.errors.required"> Female Income ?</small>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div class="form-group">
+                  <input type="number" class="form-control" name="rate" [(ngModel)]="rateModel.baseYRC" (input)="onIncomePrediction()" #rate="ngModel"
+                    [class.is-invalid]="rate.invalid && rate.touched" required>
+                  <div class="text-danger" *ngIf="rate.invalid && (rate.dirty || rate.touched)">
+                    <small *ngIf="rate.errors.required">Change rate ?</small>
+                  </div>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </div>
+        <div class="dropdown-divider"></div>
+        <div class="displayPart">
+          <tbody>
+            <tr>
+              <td>
+                <div class="form-group">
+                  <input type="number" class="form-control" name="maleIncome1" [(ngModel)]="maleIncomeModel.maleFYI" (change)="onChangedTrack('Male 1st')"
+                    required>
+                </div>
+              </td>
+              <td>
+                <div class="form-group">
+                  <input type="number" class="form-control" name="femaleIncome1" [(ngModel)]="femaleIncomeModel.femaleFYI" (change)="onChangedTrack('Female 1st')"
+                    required>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div class="form-group">
+                  <input type="number" class="form-control" name="maleIncome2" [(ngModel)]="maleIncomeModel.maleSYI" (change)="onChangedTrack('Male 2nd')"
+                    required>
+                </div>
+              </td>
+              <td>
+                <div class="form-group">
+                  <input type="number" class="form-control" name="femaleIncome2" [(ngModel)]="femaleIncomeModel.femaleSYI" (change)="onChangedTrack('Female 2nd')"
+                    required>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div class="form-group">
+                  <input type="number" class="form-control" name="maleIncome3" [(ngModel)]="maleIncomeModel.maleTYI" (change)="onChangedTrack('Male 3rd')"
+                    required>
+                </div>
+              </td>
+              <td>
+                <div class="form-group">
+                  <input type="number" class="form-control" name="femaleIncome3" [(ngModel)]="femaleIncomeModel.femaleTYI" (change)="onChangedTrack('Female 3rd')"
+                    required>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div class="form-group">
+                  <input type="number" class="form-control" name="maleIncome4" [(ngModel)]="maleIncomeModel.maleFRYI" (change)="onChangedTrack('Male 4th')"
+                    required>
+                </div>
+              </td>
+              <td>
+                <div class="form-group">
+                  <input type="number" class="form-control" name="femaleIncome4" [(ngModel)]="femaleIncomeModel.femaleFRYI" (change)="onChangedTrack('Female 4th')"
+                    required>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div class="form-group">
+                  <input type="number" class="form-control" name="maleIncome5" [(ngModel)]="maleIncomeModel.maleFVYI" (change)="onChangedTrack('Male 5th')"
+                    required>
+                </div>
+              </td>
+              <td>
+                <div class="form-group">
+                  <input type="number" class="form-control" name="femaleIncome5" [(ngModel)]="femaleIncomeModel.femaleFVYI" (change)="onChangedTrack('Female 5th')"
+                    required>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </div>
+        <div class="fotter">
+          <button id="saveAndPrint" name="submitBTN" type="ngSubmit" class="btn btn-dark" [disabled]="f.invalid"> Print</button>
+        </div>
+      </form>
+    </table>
+  </div>
+</body>
+
+</html>

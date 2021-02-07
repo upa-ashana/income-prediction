@@ -1,0 +1,29 @@
+.container{
+    height: 400px;
+    width: 500px;
+    position: absolute;
+    top: 100px;
+    left: 300px;
+}
+.fotter{
+    margin-top: 10px;
+}
+
+.fotter .btn{
+    width: 80px;
+}
+
+h4{
+    text-align: center;
+    
+}
+
+@media print{
+    button#saveAndPrint{
+        display: none;
+    }
+}
+
+.errorDisplayLeft{
+    float: left;    
+}
